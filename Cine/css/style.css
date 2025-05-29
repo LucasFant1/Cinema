@@ -1,0 +1,490 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: rgb(218, 218, 218);
+}
+
+html{
+    scroll-behavior: smooth;
+    font-family: "Outfit", sans-serif; /* ACHA OUTRA FONTE, SÓ USA ESSA KRL */
+}
+
+#home {
+    padding-top: 60px;
+    margin-top: -60px;
+  }
+
+body{
+    background-color: rgb(31, 31, 31);
+}
+
+/* NAVBAR */
+nav {
+    background: linear-gradient(#071f61, #092c8f);
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    padding: 0.5rem 2rem;
+    flex-wrap: wrap;
+    gap: 5rem; 
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo img { 
+    height: 3.5rem; 
+}
+
+.list ul {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.list ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.list ul li a:hover{
+    color:#face0cd8
+}
+
+.busca {
+    position: relative;
+    flex: 1;
+    max-width: 300px;
+}
+
+.busca input {
+    width: 100%;
+    padding: 0.5rem 2.5rem;
+    border: none;
+    border-radius: 13px;
+    font-size: 0.9rem;
+    color: #181818;
+}
+  
+.lista-cidades {
+    position: absolute;
+    bottom: -100px; 
+    left: 0;
+    right: 0;
+    background-color: white;
+    color: black;
+    border: 1px solid #ccc;
+    max-height: 100px;
+    overflow-y: auto;
+    display: none;
+    z-index: 10;
+}
+  
+.lista-cidades li {
+    padding: 0.4rem;
+    cursor: pointer;
+    color: #181818;
+}
+  
+.lista-cidades li:hover {
+    background-color: #eee;
+}
+
+.gps {
+    position: absolute;
+    left: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 28px;
+    height: 28px;
+}
+
+.lupa {
+    position: absolute; 
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.lupa:hover{
+    opacity: 0.7;
+}
+
+.login button {
+    border: none;
+    border-radius: 15px;
+    padding: 0.6rem 1rem;
+    background: linear-gradient(#f8d746, #face0cd8);
+    font-size: 0.9rem;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.7s;
+}
+
+.login button:hover {
+    background: linear-gradient(#c9ad30, #d3ae0ad8);
+}
+
+/* Fundo '-' */
+.fundo{
+    padding: 2.5rem;
+    margin: 7rem 4rem 2.5rem 4rem;
+    background-color: rgb(22, 21, 21);
+}
+
+/* Carrosel */
+.carrosel img {
+    width: 100%;
+    display: block;
+    border-radius: 7px;
+    padding: 0.4rem 0.4rem 0.4rem 0.4rem;
+    transition: opacity 0.5s ease-in-out;
+    opacity: 1;
+    height: 100%;     
+    object-fit: cover;
+}
+
+.carrosel{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: rgba(0, 0, 0, 0.781);
+    position: relative;
+    width: 92%;
+    margin: auto;
+    margin-bottom: 3rem;
+    max-width: 100rem;
+    height: 22rem;
+}
+
+.seta-es {
+    left: 2%;
+}
+
+.seta-di {
+    right: 2%;
+}
+
+.seta-es, .seta-di {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(124, 124, 124, 0.5);
+    border: none;
+    color: white;
+    font-size: 2rem;
+    padding: 0.2rem 0.7rem;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.seta-es:hover, .seta-di:hover{
+    background-color: rgba(124, 124, 124, 0.699);
+}
+
+.detalhes {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #00000031;
+    border-color: #000000;
+    color: white;
+    font-size: 1.3rem;
+    padding: 0.6rem 1.2rem;
+    border-radius: 3px;
+    border: 3px solid #000000;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.detalhes:hover{
+    background-color: #000000c5;
+    color: #d8b415;
+    transform: translateX(-50%) scale(1.1);
+}
+
+/* Cartaz */
+.divh2 h2{
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.fundo-trans{
+    background-color: rgb(43, 43, 43);
+    margin: 0rem 7rem 0rem 7rem;
+    padding: 1rem 1.5rem 1rem 1.5rem;
+    margin-bottom: 3rem;
+    display: flex;            
+    align-items: center;      
+    justify-content: center;  
+    gap: 1rem;
+    position: relative;
+}
+
+.carrosel_cartaz {
+    display: flex;            
+    gap: 1rem;   
+    justify-content: center;
+    align-items: center; 
+    z-index: 1;            
+}
+
+.carrosel_cartaz img{
+    max-width: 68%;
+    margin-left: 2.4rem;
+}
+
+.card {
+    position: relative;
+    width: 15rem;         
+    height: 15rem;        
+    flex-shrink: 0;       
+    border-radius: 2px;
+}
+
+.ver-mais { /* Quando rela no botao buga a img e nem ta centralizado direito '-'*/
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #0000009a;
+    color: white;
+    padding: 0.4rem 0.6rem;
+    border-radius: 5px;
+    border: 2px solid #ffffff;
+    cursor: pointer;
+    opacity: 0;
+    transition: 0.3s;
+    font-size: 0.9rem;
+}
+
+.card:hover .ver-mais {
+    opacity: 1;
+}
+
+.card img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; 
+    transition: 0.3s;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.card img:hover{
+    transform: scale(1.1);
+}
+
+.setaes, .setadi {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    font-size: 2rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 2;
+    transition: 0.5s;
+}
+
+.setaes {
+    left: 0.7rem;
+}
+
+.setadi {
+    right: 0.7rem;
+}
+
+.setaes:hover, .setadi:hover{
+    background-color: rgba(124, 124, 124, 0.699);
+}
+
+.h2breve{
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+/* NOTICIAS */
+.h2nov{
+    margin-bottom: 1.5rem;
+    margin-left: 1.5rem;
+}
+
+.noticias{
+    display: flex;
+    text-align: center;
+    justify-content: space-evenly;
+}
+
+.not{
+    position: relative;
+    max-width: 60rem;
+}
+
+.not img{
+    max-width: 90%;
+    cursor: pointer;
+    position: relative;
+}
+
+.not h3{
+    position: absolute;
+    bottom: 9px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.6); 
+    color: white;
+    padding: 0.5rem 1rem;
+    width: 91%;
+    font-size: 1rem;
+}
+
+.novidades{
+    display: flex;
+    text-align: center;
+    justify-content: space-evenly;
+    margin-top: 1.8rem;
+}
+
+.novidades img{
+    max-width: 90%;
+    cursor: pointer;
+}
+
+.nov h4{
+    text-align: justify;
+    max-width: 80%;
+    padding: 0.8rem 0rem 2.5rem 0.5rem;
+}
+
+.nov button{
+    display: flex;
+    margin-left: 0.5rem;
+    border: none;
+    border-radius: 7px;
+    background-color: #092c8f;
+    font-size: 1rem;
+    padding: 0.5rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.nov button:hover{
+    background-color: #071f61;
+}
+
+/* Rodapé */
+.redes{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #06184d;
+    padding: 0.8rem 0rem 0.8rem 0rem;
+}
+
+.face{
+    display: flex;
+    align-items: center;
+}
+
+.face a{
+    margin-right: 1.2rem;
+    font-size: 2.4rem;
+}
+
+.face h4{
+    cursor: pointer;
+}
+
+footer{
+    display: flex;
+    justify-content: space-around;
+    background-color: #181818;
+    padding: 1rem;
+}
+
+footer p, h4, i{
+    cursor: pointer;
+}
+
+.politicas h3{
+    margin-bottom: 0.6rem;
+}
+
+.ajuda h3{
+    margin-bottom: 0.6rem;
+}
+
+.pagamento {
+    display: flex;
+    flex-direction: column;
+    margin-left: -5rem;
+}
+
+.pagamento h3 {
+    margin-bottom: 0.5rem;
+}
+
+.cred-deb-container {
+    display: flex;
+    gap: 2rem; 
+}
+
+.cred, .deb {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    max-width: 100px; 
+    gap: 0.2rem;
+}
+
+.cred i, .deb i{
+    font-size: 1.5rem;
+}
+
+.deb img{
+    max-width: 20%;
+}
+
+.cred h4, .deb h4 {
+    margin-bottom: 0.4rem;
+}
+
+.cred-icons, .deb-icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

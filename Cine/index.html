@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <title>Cinema</title>
+    <link rel="icon" href="img/icon.png">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="home"></div>
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">
+            <a href="#home"><img src="img/logo.png" alt="CINECOM"></a>
+        </div>
+
+        <div class="list">
+            <ul>
+                <li><a href="">FILMES</a></li>
+                <li><a href="">INGRESSOS</a></li>
+                <li><a href="">PROMOÇÕES</a></li>
+                <li><a href="">CINEMAS</a></li>
+                <li><a href="">NOTÍCIAS</a></li>
+            </ul>
+        </div>
+
+        <div class="busca">
+            <img src="img/gps.png" alt="Gps" class="gps"> 
+            <input type="text" id="cidade" name="cidade" placeholder="Cinema mais próximo" oninput="filtrarCidades(this.value)">
+            <ul id="lista-cidades" class="lista-cidades">
+                <li onclick="selecionarCidade('São Paulo')">São Paulo</li>
+                <li onclick="selecionarCidade('Rio de Janeiro')">Rio de Janeiro</li>
+                <li onclick="selecionarCidade('Belo Horizonte')">Belo Horizonte</li>
+                <li onclick="selecionarCidade('Curitiba')">Curitiba</li>
+              </ul>
+            <img src="img/lupa.png" alt="Lupa" class="lupa"> 
+        </div>
+
+        <div class="login">
+            <button>ENTRAR</button>
+        </div>
+    </nav>
+
+    
+    <div class="fundo">
+        <!-- Carrosel -->
+        <div class="carrosel">
+            <img id="banner" src="img/banner-1.jpg" alt="banner">
+            <button class="seta-es" onclick="mudarBanner(-1)">&lt</button>
+            <button class="seta-di" onclick="mudarBanner(1)">&gt</button>
+            <button class="detalhes">DETALHES</button>
+        </div>
+
+        <!-- Cartaz -->
+        <div class="divh2">
+            <h2>FILMES EM CARTAZ</h2>
+        </div>
+        
+        <div class="fundo-trans">
+            <div class="es">
+              <button class="setaes" onclick="voltarCard()">&lt;</button>
+            </div>
+          
+            <div id="carroselCartaz" class="carrosel_cartaz"></div>
+          
+            <div class="di">
+              <button class="setadi" onclick="avancarCard()">&gt;</button>
+            </div>
+          </div>
+
+        <!-- Em Breve -->
+        <div class="h2breve">
+            <h2>EM BREVE</h2>
+        </div>
+        <div class="fundo-trans">
+            <div>
+              <button class="setaes" onclick="voltarOutroCarrossel()">&lt;</button>
+            </div>
+          
+            <div class="carrosel_cartaz" id="carroselOutro">
+            </div>
+          
+            <div>
+              <button class="setadi" onclick="avancarOutroCarrossel()">&gt;</button>
+            </div>
+          </div>
+
+        <!-- Novidades -->
+        <div class="fundo_nov">
+            <div class="h2nov"><h2>NOVIDADES</h2></div>
+            <div class="noticias">
+                <div class="not">
+                    <img src="img/not1.png" alt="NOTÍCIA">
+                    <h3>PRÉ-VENDA DE THUNDERBOLTS JÁ DISPONIVEL</h3>    
+                </div>
+
+                <div class="not">
+                    <img src="img/not2.png" alt="NOTÍCIA">
+                    <h3>O QUE O PÚBLICO ACHOU DA
+                        NOVA “SURFISTA PRATEADA”</h3>    
+                </div>
+
+                <div class="not">
+                    <img src="img/not3.png" alt="NOTÍCIA">
+                    <h3>PIPOCA E CINEMA, ONDE E 
+                        QUANDO COMEÇOU ESSA DUPLA?</h3>    
+                </div>
+            </div>
+
+            <div class="novidades">   
+                    <div>
+                        <img src="img/not4.png" alt="novidade">
+                    </div>
+                    
+                    <div class="nov">
+                        <h4>Pipoca por metade do preço para comemorar o dia da pipoca em todos os nossos 
+                        cinemas espalhados pelo Brasil!</h4>
+                        <button><strong>Saber mais</strong></button>
+                    </div>
+                     
+                    <div>
+                        <img src="img/not5.png" alt="novidade">
+                    </div>
+                    
+                    <div class="nov">
+                        <h4>Minecraft o filme segue pela segunda semana consecutiva 
+                        sendo a maior bilheteria do cinema brasileiro</h4>
+                        <button><strong>Saber mais</strong></button>
+                    </div>         
+            </div> 
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="redes">
+        <div class="face">
+            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <div>
+                <h3>Facebook</h3>
+                <h4>/Cine.com</h4>
+            </div>
+        </div>
+
+        <div class="face">
+            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            <div>
+                <h3>Instagram</h3>
+                <h4>/Cinecom</h4>
+            </div>
+        </div>
+
+        <div class="face">
+            <a href="https://twitter.com/seuPerfil" target="_blank"><i class="fab fa-twitter"></i></a>
+            <div>
+                <h3>Twitter</h3>
+                <h4>/Cin3com</h4>
+            </div>
+        </div>
+
+        <div class="face">
+            <a href="https://youtube.com/seuCanal" target="_blank"><i class="fab fa-youtube"></i></a>
+            <div>    
+                <h3>Youtube</h3>
+                <h4>/Cinecom</h4>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="politicas">
+            <h3>Políticas</h3>
+            <p>Privacidade e segurança</p>
+            <p>Meia-entrada</p>
+            <p>Trocas e cancelamentos</p>
+            <p>Termos de uso</p>
+        </div>
+
+        <div class="ajuda">
+            <h3>Precisa de ajuda?</h3>
+            <p>Atendimento</p>
+            <p>Cancelar pedido</p>
+            <p>Quem somos?</p>
+        </div>
+
+        <div class="pagamento">
+            <h3>Formas de pagamento</h3>
+            <div class="cred-deb-container">
+                <div class="cred">
+                  <h4>Crédito</h4>
+                  <div class="cred-icons">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-amex"></i>
+                    <i class="fab fa-cc-paypal"></i>
+                  </div>
+                </div>
+              
+                <div class="deb">
+                  <h4>Débito</h4>
+                  <div class="deb-icons">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-amex"></i>
+                    <img src="img/pix.png" alt="Pix" class="pix">
+                  </div>
+                </div>
+              </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
